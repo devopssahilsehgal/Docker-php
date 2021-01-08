@@ -9,13 +9,14 @@ pipeline {
 
     stage('Fluffy Test') {
       steps {
-        echo 'Placeholder'
+        sh '''sleep 5
+echo Success!'''
       }
     }
 
     stage('Fluffy Deploy') {
       steps {
-        echo 'Placehoilder'
+        sh 'echo Another Placeholder.'
       }
     }
 
