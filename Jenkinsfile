@@ -13,5 +13,11 @@ pipeline {
       }
     }
 
+    stage('archiveArtifacts') {
+      steps {
+        archiveArtifacts(fingerprint: true, artifacts: '/jenkins/data/*.xml')
+      }
+    }
+
   }
 }
