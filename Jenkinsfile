@@ -7,7 +7,7 @@ pipeline {
           steps {
             echo "I am a ${BUZZ_NAME}"
             sh './jenkins/test-all.sh'
-            junit '**/data/*.xml'
+            junit '**/jenkins/data/*.xml'
           }
         }
 
