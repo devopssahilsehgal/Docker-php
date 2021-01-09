@@ -4,7 +4,7 @@ pipeline {
     stage('Buzz Test') {
       steps {
         sh './jenkins/test-all.sh'
-        junit(testResults: '**/data/*.xml', skipPublishingChecks: true)
+        junit(testResults: './data/*.xml', skipPublishingChecks: true)
       }
     }
 
