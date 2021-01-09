@@ -1,9 +1,10 @@
 pipeline {
   agent any
   stages {
-    stage('Buzz Build') {
+    stage('Buzz test') {
       steps {
         sh './jenkins/build.sh'
+        junit(testResults: '**/data/*.xml', skipPublishingChecks: true)
       }
     }
 
