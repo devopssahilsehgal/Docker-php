@@ -3,6 +3,7 @@ pipeline {
   stages {
     stage('Buzz Test') {
       steps {
+        echo "I am a ${BUZZ_NAME}"
         sh './jenkins/test-all.sh'
         junit '**/data/*.xml'
       }
@@ -14,5 +15,8 @@ pipeline {
       }
     }
 
+  }
+  environment {
+    BUZZ_NAME = 'Worker bee'
   }
 }
