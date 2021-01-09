@@ -2,10 +2,22 @@ pipeline {
   agent any
   stages {
     stage('Buzz Test') {
-      steps {
-        echo "I am a ${BUZZ_NAME}"
-        sh './jenkins/test-all.sh'
-        junit '**/data/*.xml'
+      parallel {
+        stage('Buzz Test') {
+          steps {
+            echo "I am a ${BUZZ_NAME}"
+            sh './jenkins/test-all.sh'
+            junit '**/data/*.xml'
+          }
+        }
+
+        stage('Testing B') {
+          steps {
+            sh '''sleep 10
+echo done.'''
+          }
+        }
+
       }
     }
 
