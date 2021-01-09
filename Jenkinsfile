@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'bzzzcentos:7'
+    }
+
+  }
   stages {
     stage('Buzz Test') {
       parallel {
